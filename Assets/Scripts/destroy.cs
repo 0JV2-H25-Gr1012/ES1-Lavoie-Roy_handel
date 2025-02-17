@@ -15,4 +15,15 @@ public class destroy : MonoBehaviour
     {
         
     }
+    
+    private void OnCollisionEnter(Collision other)
+    {
+        if(other.gameObject.tag == "balle"){
+           Destroy(gameObject); 
+        }
+        
+    }
 }
+
+    
+
