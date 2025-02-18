@@ -19,13 +19,13 @@ public class Restart : MonoBehaviour
     {
         
     }
-    void OnEnterTrigger(Collider other)
+    private void OnTriggerEnter(Collider other)
         {
-            if(other.gameObject.tag == "balle"){
-                    Invoke("RestartScene", _timer);
-                }
+            Debug.Log("jawojf");
+            
+            Invoke("Recharge",5);
         }
-    void RestartScene()
+    void Recharge()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
