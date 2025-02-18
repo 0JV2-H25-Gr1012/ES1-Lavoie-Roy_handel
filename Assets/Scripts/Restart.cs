@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Restart : MonoBehaviour
 {
+    private int _timer = 5;
+    
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -15,4 +19,16 @@ public class Restart : MonoBehaviour
     {
         
     }
+    void OnEnterTrigger(Collider other)
+        {
+            if(other.gameObject.tag == "balle"){
+                    Invoke("RestartScene", _timer);
+                }
+        }
+    void RestartScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    
 }
